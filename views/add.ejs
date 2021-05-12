@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+<body>
+    <div class="container">
+        <h1>Add new Pizza</h1>
+
+        <form action="/new-pizza" method="POST">
+            <label for="name">Pizza name</label><br><br>
+            <input type="text" name="name" id="name"><br><br>
+            <label for="ingridients">Pizza ingridients</label><br><br>
+            <input type="text" name="ingridients" id="ingridients" placeholder="add ingridients with comma seperated without space"><br><br>
+
+            <button class="btn">Send</button>
+        </form>
+
+      
+    </div>
+<%- include('./partials/footer.ejs') %> 
+</html>

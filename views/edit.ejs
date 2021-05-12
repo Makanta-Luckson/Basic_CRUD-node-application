@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+<body>
+    <div class="container">
+        <h1>Update Pizza Details</h1>
+
+        <form action="/edit-pizza/<%= pizza._id %> " method="POST">
+            <label for="name">Pizza name</label><br><br>
+            <input type="text" name="name" id="name" value="<%=pizza.name %> "><br><br>
+            <label for="ingridients">Pizza ingridients</label><br><br>
+            <input type="text" name="ingridients" id="ingridients" value="<%= pizza.ingridients%> "><br><br>
+
+            <button class="btn">Update</button>
+        </form>
+
+    </div>
+<%- include('./partials/footer.ejs') %> 
+</html>

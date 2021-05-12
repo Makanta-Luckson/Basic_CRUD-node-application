@@ -1,0 +1,36 @@
+footer,h2{
+    text-align: center;
+}
+.add{
+    position: absolute;
+    right: 20%;
+    background-color: rgb(88, 33, 33);
+}
+
+.delete{
+    position: absolute;
+    top: 25%;
+    right: 25%;
+    border-radius: 50%;
+    background-color: rgb(92, 43, 43);
+}
+
+.delete:hover{
+    cursor: pointer;
+    box-shadow: rgb(116, 100, 100);
+   background-color: red;
+}
+
+.edit{
+    position: absolute;
+    top: 35%;
+    right: 25%;
+    border-radius: 50%;
+    background-color: rgb(92, 43, 43);
+}
+
+.edit:hover{
+    cursor: pointer;
+    box-shadow: rgb(116, 100, 100);
+    background-color: rgb(119, 76, 45);
+}

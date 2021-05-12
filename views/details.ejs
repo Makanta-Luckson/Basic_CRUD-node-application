@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<%- include('./partials/head.ejs') %> 
+<body>
+    <div class="container">
+        <h1>Details about our pizza</h1>
+        <img src="/images/pizza.jpg" height="350" width="350" alt="No image found" class="pizza">
+        <br><br>
+   
+            <a class="btn delete" data-del="<%= pizza._id%> ">Delete</a>
+            <a href="/edit-pizza/<%= pizza._id %> " class="btn edit">Edit</a>
+       
+       <h3>Pizza name : <%= pizza.name %> </h3>
+           
+        <h3>Create at : <%= pizza.createdAt %> </h3>
+          <h3><b>ingridients</b></h3>
+          <ul>
+              <% const ingridients = pizza.ingridients.split(',') %> 
+              <% ingridients.forEach( ingridient => { %>
+                    <li><%= ingridient %> </li>
+             <% }) %> 
+          </ul>
+
+          <a href="/" class="btn">Back</a>
+    </div>
+    <script>
+        
+     const trash_can = document.querySelector('a.delete');
+     trash_can.addEventListener('click', (e) => {
+
+        const endpoint = `/details/${trash_can.dataset.del}`;
+
+         fetch(endpoint, {method : 'DELETE'})
+        .then((response) => response.json())
+        .then((data) =>{window.location.href = data.redirect})
+        .catch(err => console.log(err))
+         
+     })
+        
+    </script>
+    <%- include('./partials/footer.ejs') %> 
+</html>
